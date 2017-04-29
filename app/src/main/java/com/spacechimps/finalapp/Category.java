@@ -62,7 +62,11 @@ public class Category extends AppCompatActivity {
                                 definitions.definitions[i]=new Definition(word,definition);
                             }
                             Intent intent=new Intent(getApplicationContext(),LearnWords.class);
+                            int pack=Integer.parseInt((String)response.get("pack"));
                             intent.putExtra("array",definitions);
+                            intent.putExtra("pack",pack);
+                            user_id=getIntent().getExtras().getInt("user_id");
+                            intent.putExtra("user_id",user_id);
                             startActivity(intent);
                         } catch (JSONException e) {
                             e.printStackTrace();

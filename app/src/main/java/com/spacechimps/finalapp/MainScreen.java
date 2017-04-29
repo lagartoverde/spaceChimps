@@ -59,4 +59,39 @@ public class MainScreen extends AppCompatActivity{
     public void practice(View v){
 
     }
+
+    public void ranking(View v){
+        int user_id=getIntent().getExtras().getInt("user_id");
+        requestQueue= Volley.newRequestQueue(this.getBaseContext());
+        JsonObjectRequest request= new JsonObjectRequest(Request.Method.GET,"http://spacechimps.ddns.net/controller.php?operation=5&user="+user_id,
+                new Response.Listener<JSONObject>(){
+                    public void onResponse(JSONObject response){
+                        try {
+                            JSONArray array =response.getJSONArray("users");
+                            UserPointsArray upArray=new UserPointsArray(array.length());
+                            for(int i=0;i<array.length();i++){
+                                JSONObject object=array.getJSONObject(i);
+                                String username=object.getString("username");
+                                int points=Integer.parseInt((String)object.get("points"));
+                                upArray.users[i]=new UserPoints(username,points);
+                            }
+                            int rank=response.getInt("rank");
+                            Intent intent=new Intent(getApplicationContext(),Ranking.class);
+                            intent.putExtra("array",upArray);
+                            intent.putExtra("rank",rank);
+                            startActivity(intent);
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+
+
+                },
+                new Response.ErrorListener(){
+                    public void onErrorResponse(VolleyError error) {
+                        error.printStackTrace();
+                    }
+                });
+        requestQueue.add(request);
+    }
 }

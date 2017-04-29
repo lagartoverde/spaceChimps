@@ -21,6 +21,7 @@
         <activity android:name=".MainScreen"></activity>
         <activity android:name=".NewUser"></activity>
         <activity android:name=".Category"></activity>
+        <activity android:name=".Ranking"></activity>
 
     </application>
     <uses-permission android:name="android.permission.INTERNET"/>
