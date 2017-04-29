@@ -20,5 +20,7 @@
         <activity android:name=".LearnWords"></activity>
         <activity android:name=".Tests"></activity>
         <activity android:name=".Training"></activity>
+
     </application>
+    <uses-permission android:name="android.permission.INTERNET"/>
 </manifest>

@@ -78,7 +78,7 @@
                 android:textColor="@android:color/white" />
 
             <MultiAutoCompleteTextView
-                android:id="@+id/multiAutoCompleteTextView2"
+                android:id="@+id/password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -124,6 +124,7 @@
                 android:layout_weight="1"
                 android:elevation="0dp"
                 android:text="GO"
+                android:onClick="login"
                 />
         </LinearLayout>
 
