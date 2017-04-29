@@ -106,7 +106,7 @@
                     android:layout_weight="1"
                     android:layout_centerHorizontal="true"
                     android:layout_gravity="center_horizontal"
-                    android:background="@drawable/redbutton"
+                    android:background="@drawable/buttonstate"
                     android:elevation="0dp"
                     android:onClick="login" />
             </LinearLayout>
