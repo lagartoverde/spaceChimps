@@ -13,6 +13,7 @@ import android.os.Bundle;
 
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.TextView;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -28,14 +29,19 @@ import org.json.JSONObject;
 
 
 
+
+
 public class MainScreen extends AppCompatActivity{
     RequestQueue requestQueue;
 
+    TextView welcome;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.mainscreen);
-
+        welcome = (TextView) findViewById(R.id.welcome);
+        String userID = getIntent().getExtras().getString("username");
+        welcome.setText("Welcome, " + userID + ". Choose your desired playing game");
 
     }
 
