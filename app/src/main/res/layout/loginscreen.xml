@@ -34,8 +34,8 @@
                 android:id="@+id/imageView5"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                app:srcCompat="@drawable/logo"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                app:srcCompat="@drawable/roundlogo" />
         </LinearLayout>
 
         <LinearLayout
@@ -71,9 +71,9 @@
 
             <MultiAutoCompleteTextView
                 android:id="@+id/user"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.3"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+
                 android:text="User"
                 android:textColor="@android:color/white" />
 
@@ -81,7 +81,7 @@
                 android:id="@+id/pass"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+
                 android:text="Password"
                 android:textColor="@android:color/white" />
         </LinearLayout>
@@ -111,18 +111,18 @@
         </LinearLayout>
 
         <LinearLayout
-            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/layout"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:orientation="horizontal" >
+            android:orientation="horizontal">
 
             <Button
                 android:id="@+id/login"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_centerHorizontal="true"
                 android:layout_weight="1"
-                android:elevation="0dp"
                 android:text="GO" />
         </LinearLayout>
 
