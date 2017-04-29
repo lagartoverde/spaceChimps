@@ -81,7 +81,7 @@ public class NewUser extends AppCompatActivity {
                             public void onResponse(JSONObject response){
                                 try {
                                     int success=response.getInt("sucess");
-                                    int error=response.getInt("error");
+
                                     if(success==1){
                                         AlertDialog.Builder builder1 = new AlertDialog.Builder(getBaseContext());
                                         builder1.setMessage("New User Created");
@@ -96,7 +96,9 @@ public class NewUser extends AppCompatActivity {
                                         AlertDialog alert11 = builder1.create();
                                         alert11.show();
                                     }else{
+                                        int error=response.getInt("error");
                                         if(error==1) {
+
                                             AlertDialog.Builder builder1 = new AlertDialog.Builder(getBaseContext());
                                             builder1.setMessage("Username Duplicated");
                                             builder1.setPositiveButton(
