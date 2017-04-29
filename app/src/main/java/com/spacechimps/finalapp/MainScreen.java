@@ -1,6 +1,8 @@
 package com.spacechimps.finalapp;
 
 
+import android.support.v7.app.AppCompatActivity;
+
 /**
  * Created by oscarrodriguez on 29/04/2017.
  */
@@ -8,6 +10,7 @@ package com.spacechimps.finalapp;
 
 import android.content.Intent;
 import android.os.Bundle;
+
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
@@ -22,15 +25,20 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/**
- * Created by Tomás on 29/04/2017.
- */
 
+
+<<<<<<< HEAD
 public class MainScreen extends AppCompatActivity{
     RequestQueue requestQueue;
+=======
+
+public class MainScreen extends AppCompatActivity {
+>>>>>>> origin/master
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.mainscreen);
+
+
     }
 
 
