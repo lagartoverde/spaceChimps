@@ -14,37 +14,12 @@
         android:layout_weight="1"
         android:orientation="horizontal" >
 
-        <LinearLayout
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            android:layout_width="0dp"
+        <TextView
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="horizontal" >
-        </LinearLayout>
+            android:text="Select your desired trivia category"
 
-        <LinearLayout
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="horizontal"
-            android:weightSum="1">
-
-            <ImageView
-                android:id="@+id/imageView5"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                app:srcCompat="@drawable/logo"
-                android:layout_weight="1" />
-        </LinearLayout>
-
-        <LinearLayout
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="horizontal" >
-        </LinearLayout>
+            />
     </LinearLayout>
 
 
@@ -115,8 +90,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:elevation="0dp"
-                android:text="GO"
-                />
+                android:text="GO" />
         </LinearLayout>
 
         <LinearLayout
