@@ -73,12 +73,12 @@
                 android:id="@+id/user"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="0.3"
                 android:text="User"
                 android:textColor="@android:color/white" />
 
             <MultiAutoCompleteTextView
-                android:id="@+id/multiAutoCompleteTextView2"
+                android:id="@+id/pass"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
