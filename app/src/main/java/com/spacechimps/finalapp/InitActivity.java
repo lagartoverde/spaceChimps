@@ -38,7 +38,7 @@ import android.os.StrictMode;
 
 public class InitActivity extends AppCompatActivity {
     ImageView image;
-    MultiAutoCompleteTextView user;
+    MultiAutoCompleteTextView textUser;
     MultiAutoCompleteTextView pass;
     Button go;
     LinearLayout layout;
@@ -48,16 +48,11 @@ public class InitActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-        StrictMode.setThreadPolicy(policy);
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.loginscreen);
-
-
         image = (ImageView) findViewById(R.id.imageView5);
-        user = (MultiAutoCompleteTextView) findViewById(R.id.user);
-        pass = (MultiAutoCompleteTextView) findViewById(R.id.pass);
+        textUser = (MultiAutoCompleteTextView) findViewById(R.id.user);
+        pass = (MultiAutoCompleteTextView) findViewById(R.id.password);
         go = (Button) findViewById(R.id.login);
 
         layout = (LinearLayout) findViewById(R.id.layout);
@@ -65,12 +60,12 @@ public class InitActivity extends AppCompatActivity {
         image.post(new Runnable() {
             @Override
             public void run() {
-                user.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,(int) (image.getHeight() * 0.618 / 2)));
+                textUser.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,(int) (image.getHeight() * 0.618 / 2)));
                 pass.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,(int) (image.getHeight() * 0.618 / 2)));
-                LinearLayout.LayoutParams param = new LinearLayout.LayoutParams((int)(image.getWidth() * 0.618 * 0.618),(int) (image.getHeight() * 0.618 * 0.618));
-                param.gravity = Gravity.CENTER_HORIZONTAL;
-                layout.setGravity(Gravity.CENTER_HORIZONTAL);
-                go.setLayoutParams(param);
+                //LinearLayout.LayoutParams param = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,(int) (image.getHeight() * 0.618 * 0.618));
+                //param.gravity = Gravity.CENTER_HORIZONTAL;
+                //layout.setGravity(Gravity.CENTER_HORIZONTAL);
+                //go.setLayoutParams(param);
             }
         });
 

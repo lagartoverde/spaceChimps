@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
 
-    android:background="@color/black"
+    android:background="@color/background"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
@@ -71,19 +71,19 @@
 
             <MultiAutoCompleteTextView
                 android:id="@+id/user"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-
-                android:text="User"
-                android:textColor="@android:color/white" />
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
+                android:textColorHint="@color/hint"
+                android:hint="User"
+                android:textColor="@color/text" />
 
             <MultiAutoCompleteTextView
                 android:id="@+id/password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-
-                android:text="Password"
-                android:textColor="@android:color/white" />
+                android:hint="Password"
+                android:textColorHint="@color/hint"
+                android:textColor="@color/text" />
         </LinearLayout>
 
         <LinearLayout
@@ -119,14 +119,21 @@
 
             <Button
                 android:id="@+id/login"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="wrap_content"
+                android:layout_height="116dp"
                 android:layout_centerHorizontal="true"
-                android:layout_weight="1"
                 android:elevation="0dp"
-                android:text="GO"
+                android:layout_gravity="center_horizontal"
                 android:onClick="login"
+                android:background="@drawable/redbutton"
                 />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="TextView" />
         </LinearLayout>
 
         <LinearLayout

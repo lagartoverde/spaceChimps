@@ -4,5 +4,10 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="black">#000000</color>
-
+    <color name="background">#002B36</color>
+    <color name="text">#00FFA1</color>
+    <color name="hint">#3D8699</color>
+    <color name="hyperlink">#CC1454</color>
+    <color name="buttonBackground">#EEE8D5</color>
+    <color name="buttonLabel">#073642</color>
 </resources>
