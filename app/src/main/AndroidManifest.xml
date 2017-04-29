@@ -20,6 +20,7 @@
         <activity android:name=".Training"></activity>
         <activity android:name=".MainScreen"></activity>
         <activity android:name=".NewUser"></activity>
+        <activity android:name=".Category"></activity>
 
     </application>
     <uses-permission android:name="android.permission.INTERNET"/>

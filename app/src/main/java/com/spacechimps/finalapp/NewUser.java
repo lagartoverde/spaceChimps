@@ -72,6 +72,7 @@ public class NewUser extends AppCompatActivity {
     }
 
     protected void checkNewUser(View v) {
+             NewUser.error = (TextView) findViewById(R.id.error);
             if (pass.getText().toString().equals(pass2.getText().toString())){
                 String user=textUser.getText().toString();
                 String password=pass.getText().toString();

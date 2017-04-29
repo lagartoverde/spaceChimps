@@ -47,36 +47,16 @@ public class MainScreen extends AppCompatActivity{
 
 
     public void learn(View v){
-        int user_id=getIntent().getExtras().getInt("user_id");
-        int category=1;
-        requestQueue= Volley.newRequestQueue(this.getBaseContext());
-        JsonObjectRequest request= new JsonObjectRequest(Request.Method.GET,"http://spacechimps.ddns.net/controller.php?operation=2&user="+user_id+"&category="+category,
-                new Response.Listener<JSONObject>(){
-                    public void onResponse(JSONObject response){
-                        try {
-                            JSONArray array=response.getJSONArray("definitions");
-                            DefinitionArray definitions=new DefinitionArray();
-                            for(int i=0; i<array.length();i++){
-                                JSONObject object=array.getJSONObject(i);
-                                String word=object.getString("word");
-                                String definition=object.getString("definition");
-                                definitions.definitions[i]=new Definition(word,definition);
-                            }
-                            Intent intent=new Intent(getApplicationContext(),LearnWords.class);
-                            intent.putExtra("array",definitions);
-                            startActivity(intent);
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                    }
+        Intent intent=new Intent(getApplicationContext(),Category.class);
+        intent.putExtra("user_id",getIntent().getExtras().getInt("user_id"));
+        startActivity(intent);
+    }
 
+    public void compete(View v){
 
-                },
-                new Response.ErrorListener(){
-                    public void onErrorResponse(VolleyError error) {
-                        error.printStackTrace();
-                    }
-                });
-        requestQueue.add(request);
+    }
+
+    public void practice(View v){
+
     }
 }
