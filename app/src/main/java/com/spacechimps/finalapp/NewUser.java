@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.MultiAutoCompleteTextView;
+import android.widget.TextView;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -28,7 +29,7 @@ import org.json.JSONObject;
  */
 
 public class NewUser extends AppCompatActivity {
-
+    static TextView error;
     RequestQueue requestQueue;
     ImageView image;
     MultiAutoCompleteTextView textUser;
@@ -44,7 +45,7 @@ public class NewUser extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
 
-
+        NewUser.error = (TextView) findViewById(R.id.error);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.newuser);
         image = (ImageView) findViewById(R.id.imageView5);
@@ -83,47 +84,13 @@ public class NewUser extends AppCompatActivity {
                                     int success=response.getInt("sucess");
 
                                     if(success==1){
-                                        AlertDialog.Builder builder1 = new AlertDialog.Builder(getApplicationContext());
-                                        builder1.setMessage("New User Created");
-                                        builder1.setPositiveButton(
-                                                "OK",
-                                                new DialogInterface.OnClickListener() {
-                                                    public void onClick(DialogInterface dialog, int id) {
-                                                        dialog.cancel();
-                                                        finish();
-                                                    }
-                                                });
-                                        AlertDialog alert11 = builder1.create();
-                                        alert11.show();
+                                        finish();
                                     }else{
                                         int error=response.getInt("error");
                                         if(error==1) {
-
-                                            AlertDialog.Builder builder1 = new AlertDialog.Builder(getApplicationContext());
-                                            builder1.setMessage("Username Duplicated");
-                                            builder1.setPositiveButton(
-                                                    "OK",
-                                                    new DialogInterface.OnClickListener() {
-                                                        public void onClick(DialogInterface dialog, int id) {
-                                                            dialog.cancel();
-                                                            finish();
-                                                        }
-                                                    });
-                                            AlertDialog alert11 = builder1.create();
-                                            alert11.show();
+                                            NewUser.error.setText("Duplicate Username");
                                         }else{
-                                            AlertDialog.Builder builder1 = new AlertDialog.Builder(getApplicationContext());
-                                            builder1.setMessage("Email Duplicated");
-                                            builder1.setPositiveButton(
-                                                    "OK",
-                                                    new DialogInterface.OnClickListener() {
-                                                        public void onClick(DialogInterface dialog, int id) {
-                                                            dialog.cancel();
-                                                            finish();
-                                                        }
-                                                    });
-                                            AlertDialog alert11 = builder1.create();
-                                            alert11.show();
+                                            NewUser.error.setText("Duplicate Email");
                                         }
                                     }
                                 } catch (JSONException e) {
