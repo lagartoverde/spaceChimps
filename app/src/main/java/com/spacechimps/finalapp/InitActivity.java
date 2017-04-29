@@ -67,21 +67,17 @@ public class InitActivity extends AppCompatActivity {
         pass = (MultiAutoCompleteTextView) findViewById(R.id.password);
         go = (Button) findViewById(R.id.login);
 
-        layout = (LinearLayout) findViewById(R.id.layout);
-
         image.post(new Runnable() {
             @Override
             public void run() {
-                textUser.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,(int) (image.getHeight() * 0.618 / 2)));
-                pass.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,(int) (image.getHeight() * 0.618 / 2)));
-                //LinearLayout.LayoutParams param = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,(int) (image.getHeight() * 0.618 * 0.618));
-                //param.gravity = Gravity.CENTER_HORIZONTAL;
-                //layout.setGravity(Gravity.CENTER_HORIZONTAL);
-                //go.setLayoutParams(param);
+                LinearLayout.LayoutParams para = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,(int) (image.getHeight() * 0.618 / 2));
+                para.leftMargin = 20;
+                para.rightMargin = 20;
+                textUser.setLayoutParams(para);
+                pass.setLayoutParams(para);
+
             }
         });
-
-
 
     }
 
