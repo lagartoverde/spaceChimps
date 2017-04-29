@@ -45,6 +45,7 @@ import com.android.volley.VolleyError;
 
 
 
+
 public class InitActivity extends AppCompatActivity {
     ImageView image;
     MultiAutoCompleteTextView textUser;
@@ -125,5 +126,35 @@ public class InitActivity extends AppCompatActivity {
         requestQueue.add(request);
     }
 
+
     }
+
+    private class getLogin extends AsyncTask<Void,Void,Void>{
+        InputStream in;
+        @Override
+        protected Void doInBackground(Void... params) {
+            try {
+                URL url=new URL("http://spacechimps.ddns.net/controller.php?operation=1&user="+InitActivity.user+"&password="+InitActivity.password);
+                HttpURLConnection urlConnection=(HttpURLConnection) url.openConnection();
+                in=new BufferedInputStream(urlConnection.getInputStream());
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            return null;
+        }
+        protected void onPostExecute(Void a){
+            String reponse=convertStreamToString(in);
+            Log.v("success",reponse);
+        }
+
+        public  String convertStreamToString(java.io.InputStream is) {
+            java.util.Scanner s = new java.util.Scanner(is).useDelimiter("\\A");
+            return s.hasNext() ? s.next() : "";
+        }
+
+    }
+
+
+}
 
