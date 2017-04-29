@@ -83,7 +83,7 @@ public class NewUser extends AppCompatActivity {
                                     int success=response.getInt("sucess");
 
                                     if(success==1){
-                                        AlertDialog.Builder builder1 = new AlertDialog.Builder(getBaseContext());
+                                        AlertDialog.Builder builder1 = new AlertDialog.Builder(getApplicationContext());
                                         builder1.setMessage("New User Created");
                                         builder1.setPositiveButton(
                                                 "OK",
@@ -99,7 +99,7 @@ public class NewUser extends AppCompatActivity {
                                         int error=response.getInt("error");
                                         if(error==1) {
 
-                                            AlertDialog.Builder builder1 = new AlertDialog.Builder(getBaseContext());
+                                            AlertDialog.Builder builder1 = new AlertDialog.Builder(getApplicationContext());
                                             builder1.setMessage("Username Duplicated");
                                             builder1.setPositiveButton(
                                                     "OK",
@@ -112,7 +112,7 @@ public class NewUser extends AppCompatActivity {
                                             AlertDialog alert11 = builder1.create();
                                             alert11.show();
                                         }else{
-                                            AlertDialog.Builder builder1 = new AlertDialog.Builder(getBaseContext());
+                                            AlertDialog.Builder builder1 = new AlertDialog.Builder(getApplicationContext());
                                             builder1.setMessage("Email Duplicated");
                                             builder1.setPositiveButton(
                                                     "OK",
