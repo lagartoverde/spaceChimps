@@ -64,18 +64,26 @@
         </LinearLayout>
 
         <LinearLayout
-            xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:orientation="horizontal" >
+            android:orientation="vertical">
 
             <MultiAutoCompleteTextView
-                android:id="@+id/multiAutoCompleteTextView"
-                android:layout_width="wrap_content"
+                android:id="@+id/user"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="MultiAutoCompleteTextView" />
+                android:text="User"
+                android:textColor="@android:color/white" />
+
+            <MultiAutoCompleteTextView
+                android:id="@+id/multiAutoCompleteTextView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Password"
+                android:textColor="@android:color/white" />
         </LinearLayout>
 
         <LinearLayout
@@ -126,3 +134,4 @@
             android:orientation="horizontal" >
         </LinearLayout>
     </LinearLayout>
+</LinearLayout>
