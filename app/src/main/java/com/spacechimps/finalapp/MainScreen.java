@@ -27,13 +27,11 @@ import org.json.JSONObject;
 
 
 
-<<<<<<< HEAD
+
 public class MainScreen extends AppCompatActivity{
     RequestQueue requestQueue;
-=======
 
-public class MainScreen extends AppCompatActivity {
->>>>>>> origin/master
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.mainscreen);
@@ -46,7 +44,7 @@ public class MainScreen extends AppCompatActivity {
         int user_id=getIntent().getExtras().getInt("user_id");
         int category=1;
         requestQueue= Volley.newRequestQueue(this.getBaseContext());
-        JsonObjectRequest request= new JsonObjectRequest(Request.Method.GET,"http://spacechimps.ddns.net/controller.php?operation=1&user="+user_id+"&category="+category,
+        JsonObjectRequest request= new JsonObjectRequest(Request.Method.GET,"http://spacechimps.ddns.net/controller.php?operation=2&user="+user_id+"&category="+category,
                 new Response.Listener<JSONObject>(){
                     public void onResponse(JSONObject response){
                         try {

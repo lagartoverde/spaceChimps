@@ -1,6 +1,7 @@
 package com.spacechimps.finalapp;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -11,13 +12,24 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.MultiAutoCompleteTextView;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 /**
  * Created by Tomás on 29/04/2017.
  */
 
 public class NewUser extends AppCompatActivity {
 
-
+    RequestQueue requestQueue;
     ImageView image;
     MultiAutoCompleteTextView textUser;
     MultiAutoCompleteTextView pass;
@@ -30,6 +42,8 @@ public class NewUser extends AppCompatActivity {
 
 
     protected void onCreate(Bundle savedInstanceState) {
+
+
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.newuser);
@@ -58,18 +72,72 @@ public class NewUser extends AppCompatActivity {
 
     protected void checkNewUser(View v) {
             if (pass.getText().toString().equals(pass2.getText().toString())){
-                AlertDialog.Builder builder1 = new AlertDialog.Builder(this);
-                builder1.setMessage("New User Created");
-                builder1.setPositiveButton(
-                        "OK",
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
-                                dialog.cancel();
-                                finish();
+                String user=textUser.getText().toString();
+                String password=pass.getText().toString();
+                String emailS= email.getText().toString();
+                requestQueue= Volley.newRequestQueue(this.getBaseContext());
+                JsonObjectRequest request= new JsonObjectRequest(Request.Method.GET,"http://spacechimps.ddns.net/controller.php?operation=0&user="+user+"&password="+password+"&email="+emailS,
+                        new Response.Listener<JSONObject>(){
+                            public void onResponse(JSONObject response){
+                                try {
+                                    int success=response.getInt("sucess");
+                                    int error=response.getInt("error");
+                                    if(success==1){
+                                        AlertDialog.Builder builder1 = new AlertDialog.Builder(getBaseContext());
+                                        builder1.setMessage("New User Created");
+                                        builder1.setPositiveButton(
+                                                "OK",
+                                                new DialogInterface.OnClickListener() {
+                                                    public void onClick(DialogInterface dialog, int id) {
+                                                        dialog.cancel();
+                                                        finish();
+                                                    }
+                                                });
+                                        AlertDialog alert11 = builder1.create();
+                                        alert11.show();
+                                    }else{
+                                        if(error==1) {
+                                            AlertDialog.Builder builder1 = new AlertDialog.Builder(getBaseContext());
+                                            builder1.setMessage("Username Duplicated");
+                                            builder1.setPositiveButton(
+                                                    "OK",
+                                                    new DialogInterface.OnClickListener() {
+                                                        public void onClick(DialogInterface dialog, int id) {
+                                                            dialog.cancel();
+                                                            finish();
+                                                        }
+                                                    });
+                                            AlertDialog alert11 = builder1.create();
+                                            alert11.show();
+                                        }else{
+                                            AlertDialog.Builder builder1 = new AlertDialog.Builder(getBaseContext());
+                                            builder1.setMessage("Email Duplicated");
+                                            builder1.setPositiveButton(
+                                                    "OK",
+                                                    new DialogInterface.OnClickListener() {
+                                                        public void onClick(DialogInterface dialog, int id) {
+                                                            dialog.cancel();
+                                                            finish();
+                                                        }
+                                                    });
+                                            AlertDialog alert11 = builder1.create();
+                                            alert11.show();
+                                        }
+                                    }
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+
+
+                        },
+                        new Response.ErrorListener(){
+                            public void onErrorResponse(VolleyError error) {
+                                error.printStackTrace();
                             }
                         });
-                AlertDialog alert11 = builder1.create();
-                alert11.show();
+                requestQueue.add(request);
+
 
             }else{
                 AlertDialog.Builder builder1 = new AlertDialog.Builder(this);
