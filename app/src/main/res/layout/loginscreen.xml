@@ -71,7 +71,7 @@
             android:layout_weight="1"
             android:hint="Password"
             android:layout_marginLeft="@dimen/default_gap"
-
+            android:inputType="textPassword"
             android:textColor="@color/text"
             android:textColorHint="@color/hint" />
     </LinearLayout>
@@ -128,6 +128,8 @@
                         android:layout_weight="1"
                         android:textAlignment="center"
                         android:textColor="@color/hyperlink"
+                        android:clickable="true"
+                        android:onClick="launchNewUser"
                         android:text="New User" />
                     <TextView
                         android:id="@+id/about"
