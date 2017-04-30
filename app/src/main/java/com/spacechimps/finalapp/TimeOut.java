@@ -16,9 +16,9 @@ import android.widget.TextView;
 public class TimeOut extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.newlayout);
-        //TextView text = (TextView) findViewById(R.id.score);
-        //int score = getIntent().getExtras().getInt("score");
-        //text.setText("The time is over. Your score is " + Integer.toString(score));
+        setContentView(R.layout.score);
+        TextView text = (TextView) findViewById(R.id.score);
+        int score = getIntent().getExtras().getInt("score");
+        text.setText("The time is over. Your score is " + Integer.toString(score));
     }
 }

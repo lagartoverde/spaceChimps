@@ -48,9 +48,9 @@ public class Tests extends AppCompatActivity {
         public void run() {
             if (timer == 0){
                 Intent newIntent = new Intent(getApplicationContext(), TimeOut.class);
-                //newIntent.putExtra("score", computeScore());
+                newIntent.putExtra("score", computeScore());
                 startActivity(newIntent);
-                //finish();
+                finish();
                 //Tira error al cambiar el layout
             }
             else if(!finish){
@@ -135,7 +135,7 @@ public class Tests extends AppCompatActivity {
     }
 
     public int computeScore(){
-        return (int) (5000 * (correctAnswers - wrongAnswers / 2) / timer);
+        return (int) (5000 * (correctAnswers - wrongAnswers / 2) / 100 - timer);
     }
 
     public void selectOptions(int option){

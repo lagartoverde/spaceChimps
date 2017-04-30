@@ -11,7 +11,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
@@ -173,7 +172,7 @@ public class MainScreen extends AppCompatActivity{
         requestQueue.add(request);
     }
     public void crowdsourcing(View v){
-        Intent intent=new Intent(getApplicationContext(),Crowsourcing.class);
+        Intent intent=new Intent(getApplicationContext(),Crowdsourcing.class);
         startActivity(intent);
     }
 }
