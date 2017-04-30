@@ -33,12 +33,12 @@ public class LearnWords extends AppCompatActivity {
         TextView word=(TextView)findViewById(R.id.word);
         TextView definition=(TextView) findViewById(R.id.definition);
         word.setText(array.definitions[index].word);
-        definition.setText(array.definitions[index].definition);
+        definition.setText("\t\t\t"+array.definitions[index].definition);
     }
     public void next(View v){
         if(index==4){
             AlertDialog.Builder builder1 = new AlertDialog.Builder(this);
-            builder1.setMessage("Congratulations you have learn 5 new words");
+            builder1.setMessage("Congratulations you have learned 5 new words");
             builder1.setPositiveButton(
                     "OK",
                     new DialogInterface.OnClickListener() {
@@ -54,7 +54,7 @@ public class LearnWords extends AppCompatActivity {
             TextView word=(TextView)findViewById(R.id.word);
             TextView definition=(TextView) findViewById(R.id.definition);
             word.setText(array.definitions[index].word);
-            definition.setText(array.definitions[index].definition);
+            definition.setText("\t\t\t"+array.definitions[index].definition);
         }
     }
     public void bindPack(){

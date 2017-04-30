@@ -26,9 +26,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-
-
-
+import java.util.Arrays;
 
 
 public class MainScreen extends AppCompatActivity{
@@ -53,11 +51,91 @@ public class MainScreen extends AppCompatActivity{
     }
 
     public void compete(View v){
+        int user_id=getIntent().getExtras().getInt("user_id");
+        requestQueue= Volley.newRequestQueue(this.getBaseContext());
+        JsonObjectRequest request= new JsonObjectRequest(Request.Method.GET,"http://spacechimps.ddns.net/controller.php?operation=3&user="+user_id,
+                new Response.Listener<JSONObject>(){
+                    public void onResponse(JSONObject response){
+                        try {
+                            JSONArray jsondefinitions=response.getJSONArray("definitions");
+                            if(jsondefinitions.length()<30){
+                                //TODO: Mostrar mensajito
+                            }else{
+                                DefinitionArray definitions=new DefinitionArray(jsondefinitions.length());
+                                for(int i=0;i<jsondefinitions.length();i++){
+                                    JSONObject object=jsondefinitions.getJSONObject(i);
+                                    String word=object.getString("word");
+                                    String definitionString=object.getString("definition");
+                                    Definition definition=new Definition(word,definitionString);
+                                    definition.random=(int)Math.floor(Math.random()*jsondefinitions.length());
+                                    definitions.definitions[i]=definition;
+                                }
+                                Arrays.sort(definitions.definitions);
+                                DefinitionArray testDefinitions=new DefinitionArray(30);
+                                for(int j=0;j<30;j++){
+                                    testDefinitions.definitions[j]=definitions.definitions[j];
+                                }
+                                Intent intent=new Intent(getApplicationContext(),Tests.class);
+                                intent.putExtra("array",testDefinitions);
+                                startActivity(intent);
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
 
+
+                },
+                new Response.ErrorListener(){
+                    public void onErrorResponse(VolleyError error) {
+                        error.printStackTrace();
+                    }
+                });
+        requestQueue.add(request);
     }
 
     public void practice(View v){
+        int user_id=getIntent().getExtras().getInt("user_id");
+        requestQueue= Volley.newRequestQueue(this.getBaseContext());
+        JsonObjectRequest request= new JsonObjectRequest(Request.Method.GET,"http://spacechimps.ddns.net/controller.php?operation=3&user="+user_id,
+                new Response.Listener<JSONObject>(){
+                    public void onResponse(JSONObject response){
+                        try {
+                            JSONArray jsondefinitions=response.getJSONArray("definitions");
+                            if(jsondefinitions.length()<30){
+                                //TODO: Mostrar mensajito
+                            }else{
+                                DefinitionArray definitions=new DefinitionArray(jsondefinitions.length());
+                                for(int i=0;i<jsondefinitions.length();i++){
+                                    JSONObject object=jsondefinitions.getJSONObject(i);
+                                    String word=object.getString("word");
+                                    String definitionString=object.getString("definition");
+                                    Definition definition=new Definition(word,definitionString);
+                                    definition.random=(int)Math.floor(Math.random()*jsondefinitions.length());
+                                    definitions.definitions[i]=definition;
+                                }
+                                Arrays.sort(definitions.definitions);
+                                DefinitionArray testDefinitions=new DefinitionArray(30);
+                                for(int j=0;j<30;j++){
+                                    testDefinitions.definitions[j]=definitions.definitions[j];
+                                }
+                                Intent intent=new Intent(getApplicationContext(),Training.class);
+                                intent.putExtra("array",testDefinitions);
+                                startActivity(intent);
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
 
+
+                },
+                new Response.ErrorListener(){
+                    public void onErrorResponse(VolleyError error) {
+                        error.printStackTrace();
+                    }
+                });
+        requestQueue.add(request);
     }
 
     public void ranking(View v){

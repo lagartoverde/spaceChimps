@@ -11,5 +11,7 @@ public class DefinitionArray implements Serializable {
     public DefinitionArray(){
         definitions=new Definition[5];
     }
-
+    public DefinitionArray(int x){
+        definitions=new Definition[x];
+    }
 }
