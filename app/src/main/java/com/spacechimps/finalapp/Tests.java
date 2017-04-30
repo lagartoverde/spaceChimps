@@ -9,6 +9,16 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
 /**
  * Created by Tomás on 29/04/2017.
  */
@@ -27,6 +37,7 @@ public class Tests extends AppCompatActivity {
     final Handler buttons = new Handler();
     int timer = 9;
     boolean finish = false;
+    private RequestQueue requestQueue;
 
     protected void miHilo(){
         Thread t = new Thread(){
@@ -126,11 +137,28 @@ public class Tests extends AppCompatActivity {
         else{
             setContentView(R.layout.score);
             TextView text = (TextView) findViewById(R.id.score);
-            text.setText("Congratulations, you have finished. Your score is " + Integer.toString(computeScore()));
+            final int score=computeScore();
+            text.setText("Congratulations, you have finished. Your score is " + Integer.toString(score));
             finish = true;
             option1.setClickable(false);
             option2.setClickable(false);
             option3.setClickable(false);
+            final int user_id=getIntent().getExtras().getInt("user_id");
+            requestQueue = Volley.newRequestQueue(this.getBaseContext());
+            JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, "http://spacechimps.ddns.net/controller.php?operation=6&user=" + user_id + "&points="+score,
+                    new Response.Listener<JSONObject>() {
+                        public void onResponse(JSONObject response) {
+
+                        }
+
+
+                    },
+                    new Response.ErrorListener() {
+                        public void onErrorResponse(VolleyError error) {
+                            error.printStackTrace();
+                        }
+                    });
+            requestQueue.add(request);
         }
     }
 

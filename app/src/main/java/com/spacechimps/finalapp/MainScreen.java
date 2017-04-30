@@ -50,7 +50,7 @@ public class MainScreen extends AppCompatActivity{
     }
 
     public void compete(View v){
-        int user_id=getIntent().getExtras().getInt("user_id");
+        final int user_id=getIntent().getExtras().getInt("user_id");
         requestQueue= Volley.newRequestQueue(this.getBaseContext());
         JsonObjectRequest request= new JsonObjectRequest(Request.Method.GET,"http://spacechimps.ddns.net/controller.php?operation=3&user="+user_id,
                 new Response.Listener<JSONObject>(){
@@ -76,6 +76,7 @@ public class MainScreen extends AppCompatActivity{
                                 }
                                 Intent intent=new Intent(getApplicationContext(),Tests.class);
                                 intent.putExtra("array",testDefinitions);
+                                intent.putExtra("user_id",user_id);
                                 startActivity(intent);
                             }
                         } catch (JSONException e) {
@@ -94,7 +95,7 @@ public class MainScreen extends AppCompatActivity{
     }
 
     public void practice(View v){
-        int user_id=getIntent().getExtras().getInt("user_id");
+        final int user_id=getIntent().getExtras().getInt("user_id");
         requestQueue= Volley.newRequestQueue(this.getBaseContext());
         JsonObjectRequest request= new JsonObjectRequest(Request.Method.GET,"http://spacechimps.ddns.net/controller.php?operation=3&user="+user_id,
                 new Response.Listener<JSONObject>(){
@@ -120,6 +121,7 @@ public class MainScreen extends AppCompatActivity{
                                 }
                                 Intent intent=new Intent(getApplicationContext(),Training.class);
                                 intent.putExtra("array",testDefinitions);
+                                intent.putExtra("user_id",user_id);
                                 startActivity(intent);
                             }
                         } catch (JSONException e) {
