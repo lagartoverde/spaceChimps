@@ -1,7 +1,5 @@
 package com.spacechimps.finalapp;
 
-
-import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
@@ -35,17 +33,17 @@ public class Tests extends AppCompatActivity {
     TextView statement;
     final Handler miHandler = new Handler();
     final Handler buttons = new Handler();
-    int timer = 9;
+    int timer = 99;
     boolean finish = false;
     private RequestQueue requestQueue;
 
-    protected void miHilo(){
-        Thread t = new Thread(){
-            public void run(){
-                try{
+    protected void miHilo() {
+        Thread t = new Thread() {
+            public void run() {
+                try {
                     Thread.sleep(1000);
 
-                }catch(InterruptedException e){
+                } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
                 miHandler.post(ejecutarAccion);
@@ -57,14 +55,11 @@ public class Tests extends AppCompatActivity {
     final Runnable ejecutarAccion = new Runnable() {
         @Override
         public void run() {
-            if (timer == 0){
-                Intent newIntent = new Intent(getApplicationContext(), TimeOut.class);
-                newIntent.putExtra("score", computeScore());
-                startActivity(newIntent);
-                finish();
-                //Tira error al cambiar el layout
-            }
-            else if(!finish){
+            if (timer == 0) {
+                setContentView(R.layout.score);
+                TextView text = (TextView) findViewById(R.id.score);
+                text.setText("The time is over. Your score is " + Integer.toString(computeScore()));
+            } else if (!finish) {
                 TextView time = (TextView) findViewById(R.id.time);
                 time.setText("Time: " + Integer.toString(timer));
                 timer--;
@@ -74,19 +69,14 @@ public class Tests extends AppCompatActivity {
 
     };
 
-    private void changeLayout() {
-        setContentView(R.layout.score);
-        TextView text = (TextView) findViewById(R.id.score);
-        text.setText("The time is over. Your score is " + Integer.toString(computeScore()));
-    }
 
-    protected void cambiaColor(){
-        Thread t = new Thread(){
-            public void run(){
-                try{
+    protected void cambiaColor() {
+        Thread t = new Thread() {
+            public void run() {
+                try {
                     Thread.sleep(500);
 
-                }catch(InterruptedException e){
+                } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
                 buttons.post(changeColor);
@@ -105,9 +95,8 @@ public class Tests extends AppCompatActivity {
             option2.setClickable(true);
             option3.setClickable(true);
             setInterface();
-            }
-        };
-
+        }
+    };
 
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -124,17 +113,16 @@ public class Tests extends AppCompatActivity {
     }
 
 
-    public void setInterface(){
+    public void setInterface() {
 
-        if (questionNumber < 29){
+        if (questionNumber < 29) {
             question = (int) (Math.random() * 3);
             statement.setText(array.definitions[question + questionNumber].definition);
             option1.setText(array.definitions[0 + questionNumber].word);
             option2.setText(array.definitions[1 + questionNumber].word);
             option3.setText(array.definitions[2 + questionNumber].word);
-            questionNumber+=3;
-        }
-        else{
+            questionNumber += 3;
+        } else {
             setContentView(R.layout.score);
             TextView text = (TextView) findViewById(R.id.score);
             final int score=computeScore();
@@ -162,14 +150,14 @@ public class Tests extends AppCompatActivity {
         }
     }
 
-    public int computeScore(){
+    public int computeScore() {
         return (int) (5000 * (correctAnswers - wrongAnswers / 2) / 100 - timer);
     }
 
-    public void selectOptions(int option){
+    public void selectOptions(int option) {
 
-        if (option == question){
-            switch (option){
+        if (option == question) {
+            switch (option) {
                 case 0:
                     option1.setBackgroundColor(getResources().getColor(R.color.greenCorrect));
                     break;
@@ -181,9 +169,8 @@ public class Tests extends AppCompatActivity {
                     break;
             }
             correctAnswers++;
-        }
-        else{
-            switch (option){
+        } else {
+            switch (option) {
                 case 0:
                     option1.setBackgroundColor(getResources().getColor(R.color.redWrong));
                     break;
@@ -195,7 +182,7 @@ public class Tests extends AppCompatActivity {
                     break;
             }
 
-            switch (question){
+            switch (question) {
                 case 0:
                     option1.setBackgroundColor(getResources().getColor(R.color.greenCorrect));
                     break;

@@ -86,7 +86,7 @@
                     android:layout_weight="1"
                     android:layout_centerHorizontal="true"
                     android:layout_gravity="center_horizontal"
-                    android:background="@drawable/buttonstate"
+                    android:background="@drawable/redbuttonstate"
                     android:elevation="0dp"
                     android:onClick="send" />
                 <TextView
