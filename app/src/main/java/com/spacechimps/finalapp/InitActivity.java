@@ -54,7 +54,8 @@ public class InitActivity extends AppCompatActivity {
 
                 textUser.setLayoutParams(para);
                 pass.setLayoutParams(para);
-                //textUser.setRawInputType(InputType.);
+                textUser.setInputType(InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS);
+                textUser.setMaxLines(1);
 
             }
         });

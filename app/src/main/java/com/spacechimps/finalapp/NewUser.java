@@ -4,6 +4,7 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.text.InputType;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -65,6 +66,10 @@ public class NewUser extends AppCompatActivity {
                 pass.setLayoutParams(para);
                 pass2.setLayoutParams(para);
                 email.setLayoutParams(para);
+                textUser.setInputType(InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS);
+                textUser.setMaxLines(1);
+                email.setInputType(InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS);
+                email.setMaxLines(1);
             }
         });
     }
