@@ -20,7 +20,7 @@
             android:layout_weight="1"
             android:text="Questions"
             android:textColor="@color/hint"
-            android:textSize="30dp" />
+            android:textSize="15dp" />
     </LinearLayout>
 
     <LinearLayout

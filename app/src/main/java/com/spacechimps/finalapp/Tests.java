@@ -1,19 +1,13 @@
 package com.spacechimps.finalapp;
 
-import android.app.Activity;
-import android.content.DialogInterface;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.SystemClock;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-
-import java.lang.ref.WeakReference;
 
 /**
  * Created by Tomás on 29/04/2017.
@@ -31,11 +25,8 @@ public class Tests extends AppCompatActivity {
     TextView statement;
     final Handler miHandler = new Handler();
     final Handler buttons = new Handler();
-    int timer = 99;
+    int timer = 9;
     boolean finish = false;
-
-
-
 
     protected void miHilo(){
         Thread t = new Thread(){
@@ -56,9 +47,11 @@ public class Tests extends AppCompatActivity {
         @Override
         public void run() {
             if (timer == 0){
-                setContentView(R.layout.score);
-                TextView text = (TextView) findViewById(R.id.score);
-                text.setText("The time is over. Your score is " + Integer.toString(computeScore()));
+                Intent newIntent = new Intent(getApplicationContext(), TimeOut.class);
+                //newIntent.putExtra("score", computeScore());
+                startActivity(newIntent);
+                //finish();
+                //Tira error al cambiar el layout
             }
             else if(!finish){
                 TextView time = (TextView) findViewById(R.id.time);
@@ -69,6 +62,12 @@ public class Tests extends AppCompatActivity {
         }
 
     };
+
+    private void changeLayout() {
+        setContentView(R.layout.score);
+        TextView text = (TextView) findViewById(R.id.score);
+        text.setText("The time is over. Your score is " + Integer.toString(computeScore()));
+    }
 
     protected void cambiaColor(){
         Thread t = new Thread(){
@@ -118,7 +117,6 @@ public class Tests extends AppCompatActivity {
 
         if (questionNumber < 29){
             question = (int) (Math.random() * 3);
-            Log.v("Tag", Integer.toString(question));
             statement.setText(array.definitions[question + questionNumber].definition);
             option1.setText(array.definitions[0 + questionNumber].word);
             option2.setText(array.definitions[1 + questionNumber].word);
