@@ -1,5 +1,5 @@
 # spaceChimps
-Repository for the code of the NASA spaces app challenge
+Repository for the code of the NASA space apps challenge
 
 The app has been fully tested and is fully operational in a Google Nexus 5X running Android 7.1.1, and in multiple Android Studio Virtual Devices
 
