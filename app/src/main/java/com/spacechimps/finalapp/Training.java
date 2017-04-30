@@ -86,46 +86,46 @@ public class Training extends AppCompatActivity {
     }
 
 
-    public void selectOptions(int option){
+    public void selectOptions(int option) {
 
-        if (option == question){
-            switch (option){
+        if (option == question) {
+            switch (option) {
                 case 0:
-                    option1.setBackgroundColor(getResources().getColor(R.color.greenCorrect));
+                    option1.setBackgroundResource(R.drawable.buttongreen);
                     break;
                 case 1:
-                    option2.setBackgroundColor(getResources().getColor(R.color.greenCorrect));
+                    option2.setBackgroundResource(R.drawable.buttongreen);
                     break;
                 case 2:
-                    option3.setBackgroundColor(getResources().getColor(R.color.greenCorrect));
+                    option3.setBackgroundResource(R.drawable.buttongreen);
                     break;
             }
             correctAnswers++;
-        }
-        else{
-            switch (option){
+        } else {
+            switch (option) {
                 case 0:
-                    option1.setBackgroundColor(getResources().getColor(R.color.redWrong));
+                    option1.setBackgroundResource(R.drawable.buttonred);
                     break;
                 case 1:
-                    option2.setBackgroundColor(getResources().getColor(R.color.redWrong));
+                    option2.setBackgroundResource(R.drawable.buttonred);
                     break;
                 case 2:
-                    option3.setBackgroundColor(getResources().getColor(R.color.redWrong));
+                    option3.setBackgroundResource(R.drawable.buttonred);
                     break;
             }
 
-            switch (question){
+            switch (question) {
                 case 0:
-                    option1.setBackgroundColor(getResources().getColor(R.color.greenCorrect));
+                    option1.setBackgroundResource(R.drawable.buttongreen);
                     break;
                 case 1:
-                    option2.setBackgroundColor(getResources().getColor(R.color.greenCorrect));
+                    option2.setBackgroundResource(R.drawable.buttongreen);
                     break;
                 case 2:
-                    option3.setBackgroundColor(getResources().getColor(R.color.greenCorrect));
+                    option3.setBackgroundResource(R.drawable.buttongreen);
                     break;
             }
+
         }
         option1.setClickable(false);
         option2.setClickable(false);
