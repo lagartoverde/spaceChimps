@@ -22,7 +22,7 @@
         <activity android:name=".NewUser"></activity>
         <activity android:name=".Category"></activity>
         <activity android:name=".Ranking"></activity>
-
+        <activity android:name=".Crowsourcing"></activity>
     </application>
     <uses-permission android:name="android.permission.INTERNET"/>
 </manifest>

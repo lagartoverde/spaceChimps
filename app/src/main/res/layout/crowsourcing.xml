@@ -13,38 +13,15 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:orientation="horizontal" >
-
-        <LinearLayout
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="horizontal" >
-        </LinearLayout>
-
-        <LinearLayout
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="horizontal"
-            android:weightSum="1">
-
-            <ImageView
-                android:id="@+id/imageView5"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/roundlogo" />
-        </LinearLayout>
-
-        <LinearLayout
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="horizontal" >
-        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add a word to the game"
+            android:textSize="50dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:textColor="@color/hint"
+            />
     </LinearLayout>
 
 
@@ -55,22 +32,25 @@
         android:orientation="vertical">
 
         <MultiAutoCompleteTextView
-            android:id="@+id/user"
+            android:id="@+id/word"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:hint="User"
+            android:hint="Word"
             android:textColor="@color/text"
             android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
             android:textColorHint="@color/hint" />
 
         <MultiAutoCompleteTextView
-            android:id="@+id/password"
+            android:id="@+id/definition"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:hint="Password"
-            android:layout_marginLeft="@dimen/default_gap"
+            android:hint="Definition"
+
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
             android:inputType="textPassword"
             android:textColor="@color/text"
             android:textColorHint="@color/hint" />
@@ -100,7 +80,7 @@
                 android:orientation="vertical">
 
                 <Button
-                    android:id="@+id/login"
+                    android:id="@+id/send"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
@@ -108,39 +88,15 @@
                     android:layout_gravity="center_horizontal"
                     android:background="@drawable/buttonstate"
                     android:elevation="0dp"
-                    android:onClick="login" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-                <LinearLayout
+                    android:onClick="send" />
+                <TextView
+                    android:id="@+id/feedback"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/newUser"
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="1"
-                        android:textAlignment="center"
-                        android:textColor="@color/hyperlink"
-                        android:clickable="true"
-                        android:onClick="launchNewUser"
-                        android:text="New User" />
-                    <TextView
-                        android:id="@+id/error"
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="1"
-                        android:textAlignment="center"
-                        android:textColor="@color/hyperlink"
-                        android:text="" />
-                </LinearLayout>
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/redWrong"/>
             </LinearLayout>
+
+
 
         </LinearLayout>
 

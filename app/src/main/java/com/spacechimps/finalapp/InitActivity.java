@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.MultiAutoCompleteTextView;
+import android.widget.TextView;
 
 
 import org.json.JSONException;
@@ -31,9 +32,8 @@ public class InitActivity extends AppCompatActivity {
     Button go;
     private RequestQueue requestQueue;
     static int userId;
-
-    static String user = "";
-    static String password = "";
+    static TextView error;
+    static String user="";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,10 +64,11 @@ public class InitActivity extends AppCompatActivity {
     }
 
     public void login(View v) {
+        InitActivity.error=(TextView) findViewById(R.id.error);
         MultiAutoCompleteTextView userView = (MultiAutoCompleteTextView) findViewById(R.id.user);
         MultiAutoCompleteTextView passwordView = (MultiAutoCompleteTextView) findViewById(R.id.password);
-        user = userView.getText().toString();
-        password = passwordView.getText().toString();
+        InitActivity.user = userView.getText().toString();
+        String password = passwordView.getText().toString();
         requestQueue = Volley.newRequestQueue(this.getBaseContext());
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, "http://spacechimps.ddns.net/controller.php?operation=1&user=" + user + "&password=" + password,
                 new Response.Listener<JSONObject>() {
@@ -84,13 +85,13 @@ public class InitActivity extends AppCompatActivity {
                                 userId = Integer.parseInt((String) response.get("user_id"));
                                 Intent intent = new Intent(getApplicationContext(), MainScreen.class);
                                 intent.putExtra("user_id", userId);
-                                intent.putExtra("username", user);
+                                intent.putExtra("username", InitActivity.user);
                                 startActivity(intent);
                             } catch (JSONException e) {
                                 e.printStackTrace();
                             }
                         } else {
-
+                            InitActivity.error.setText("User and/or password incorrect");
                         }
                     }
 
