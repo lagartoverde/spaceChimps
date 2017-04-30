@@ -33,47 +33,126 @@
         android:layout_height="200dp"
         android:layout_weight="1"
         android:orientation="vertical">
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:text="General Knowledge"
-            android:onClick="general"
-            />
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:text="NASA missions/programs"
-            android:onClick="nasa"/>
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:text="Physics"
-            android:onClick="physics"/>
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:text="Technical vocabulary"
-            android:onClick="tech"
-            />
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:text="Tools"
-            android:onClick="tools"
-            />
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:text="Relevant people"
-            android:onClick="relevant"/>
 
-        <ProgressBar
-            android:id="@+id/waiting"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:visibility="invisible"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="0dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@drawable/buttonbackground"
+                android:onClick="general"
+                android:text="General Knowledge"
+                android:textColor="@color/buttonLabel" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="0dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@drawable/buttonbackground"
+                android:onClick="nasa"
+                android:text="NASA missions/programs"
+                android:textColor="@color/buttonLabel" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="0dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@drawable/buttonbackground"
+                android:onClick="physics"
+                android:text="Physics"
+                android:textColor="@color/buttonLabel" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="0dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button4"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@drawable/buttonbackground"
+                android:onClick="tech"
+                android:text="Technical vocabulary"
+                android:textColor="@color/buttonLabel" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="0dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button5"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@drawable/buttonbackground"
+                android:onClick="tools"
+                android:text="Tools"
+                android:textColor="@color/buttonLabel" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="0dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button6"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_weight="1"
+                android:background="@drawable/buttonbackground"
+                android:onClick="relevant"
+                android:text="Relevant people"
+                android:textColor="@color/buttonLabel" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="0dp"
+            android:orientation="horizontal">
+
+            <ProgressBar
+                android:id="@+id/waiting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:visibility="invisible" />
+        </LinearLayout>
+
     </LinearLayout>
 
 

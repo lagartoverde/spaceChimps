@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import android.text.InputType;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -50,8 +51,10 @@ public class InitActivity extends AppCompatActivity {
                 LinearLayout.LayoutParams para = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, (int) (image.getHeight() * 0.618 / 2));
                 para.leftMargin = 20;
                 para.rightMargin = 20;
+
                 textUser.setLayoutParams(para);
                 pass.setLayoutParams(para);
+                //textUser.setRawInputType(InputType.);
 
             }
         });

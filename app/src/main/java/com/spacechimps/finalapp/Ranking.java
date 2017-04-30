@@ -32,11 +32,11 @@ public class Ranking extends AppCompatActivity {
             username.setText(array.users[i].username);
             points.setText(Integer.toString(array.users[i].points));
             position.setText(Integer.toString(i+1)+".");
-            username.setTextSize(30);
-            points.setTextSize(30);
-            position.setTextSize(30);
+            username.setTextSize(25);
+            points.setTextSize(25);
+            position.setTextSize(25);
             TableRow.LayoutParams llp = new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT);
-            llp.setMargins(100, 0, 100, 0);
+            llp.setMargins(50, 0, 50, 0);
             points.setLayoutParams(llp);
             username.setLayoutParams(llp);
             position.setLayoutParams(llp);

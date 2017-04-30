@@ -92,7 +92,7 @@ public class NewUser extends AppCompatActivity {
                                             NewUser.error.setText("Duplicate Email");
                                         }
                                     }
-                                } catch (JSONException e) {
+                                } catch (Exception e) {
                                     e.printStackTrace();
                                 }
                             }
