@@ -108,6 +108,8 @@
 
         <Button
             android:id="@+id/signin"
+            android:background="@drawable/buttonbackground"
+            android:textColor="@color/buttonLabel"
             android:layout_width="match_parent"
             android:layout_height="66dp"
             android:layout_gravity="center"

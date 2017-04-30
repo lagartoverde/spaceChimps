@@ -8,8 +8,9 @@
     <color name="text">#00FFA1</color>
     <color name="hint">#3D8699</color>
     <color name="hyperlink">#CC1454</color>
-    <color name="buttonBackground">#EEE8D5</color>
+    <color name="buttonNotPushed">#EEE8D5</color>
     <color name="buttonLabel">#073642</color>
     <color name="greenCorrect">#0DFF1F</color>
     <color name="redWrong">#FF4840 </color>
+    <color name="buttonPushed">#D9D6D5</color>
 </resources>

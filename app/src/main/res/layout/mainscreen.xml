@@ -45,10 +45,10 @@
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp"
                 android:layout_weight="1"
-                android:background="@color/buttonBackground"
+                android:background="@drawable/buttonbackground"
+                android:onClick="learn"
                 android:text="Learn"
-                android:textColor="@color/buttonLabel"
-                android:onClick="learn"/>
+                android:textColor="@color/buttonLabel" />
         </LinearLayout>
 
         <LinearLayout
@@ -64,10 +64,10 @@
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp"
                 android:layout_weight="1"
-                android:background="@color/buttonBackground"
+                android:background="@drawable/buttonbackground"
+                android:onClick="practice"
                 android:text="Practice"
-                android:textColor="@color/buttonLabel"
-                android:onClick="practice"/>
+                android:textColor="@color/buttonLabel" />
         </LinearLayout>
 
         <LinearLayout
@@ -82,10 +82,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp"
-                android:onClick="compete"
                 android:layout_weight="1"
+                android:background="@drawable/buttonbackground"
 
-                android:background="@color/buttonBackground"
+                android:onClick="compete"
                 android:text="Compete"
                 android:textColor="@color/buttonLabel" />
         </LinearLayout>
@@ -101,10 +101,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp"
-                android:onClick="ranking"
                 android:layout_weight="1"
+                android:background="@drawable/buttonbackground"
 
-                android:background="@color/buttonBackground"
+                android:onClick="ranking"
                 android:text="Ranking"
                 android:textColor="@color/buttonLabel" />
         </LinearLayout>

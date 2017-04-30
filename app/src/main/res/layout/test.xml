@@ -43,7 +43,7 @@
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp"
                 android:textColor="@color/buttonLabel"
-                android:background="@color/buttonBackground"
+                android:background="@drawable/buttonbackground"
                 android:text="Option 1"
                 android:onClick="option1"/>
         </LinearLayout>
@@ -61,7 +61,7 @@
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp"
                 android:textColor="@color/buttonLabel"
-                android:background="@color/buttonBackground"
+                android:background="@drawable/buttonbackground"
                 android:layout_weight="1"
                 android:text="Option 2"
                 android:onClick="option2"/>
@@ -80,7 +80,7 @@
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp"
                 android:textColor="@color/buttonLabel"
-                android:background="@color/buttonBackground"
+                android:background="@drawable/buttonbackground"
                 android:layout_weight="1"
                 android:text="Option 3"
                 android:onClick="option3"/>

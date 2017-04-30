@@ -87,9 +87,9 @@ public class Tests extends AppCompatActivity {
     final Runnable changeColor = new Runnable() {
         @Override
         public void run() {
-            option1.setBackgroundColor(getResources().getColor(R.color.buttonBackground));
-            option2.setBackgroundColor(getResources().getColor(R.color.buttonBackground));
-            option3.setBackgroundColor(getResources().getColor(R.color.buttonBackground));
+            option1.setBackgroundResource(R.drawable.buttonbackground);
+            option2.setBackgroundResource(R.drawable.buttonbackground);
+            option3.setBackgroundResource(R.drawable.buttonbackground);
             option1.setClickable(true);
             option2.setClickable(true);
             option3.setClickable(true);
