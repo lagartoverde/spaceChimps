@@ -23,7 +23,6 @@
         <activity android:name=".Category"></activity>
         <activity android:name=".Ranking"></activity>
         <activity android:name=".Crowdsourcing"></activity>
-        <activity android:name=".TimeOut"></activity>
     </application>
     <uses-permission android:name="android.permission.INTERNET"/>
 </manifest>
