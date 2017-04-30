@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.android.volley.Request;
@@ -117,6 +118,7 @@ public class Tests extends AppCompatActivity {
 
         if (questionNumber < 29) {
             question = (int) (Math.random() * 3);
+
             statement.setText(array.definitions[question + questionNumber].definition);
             option1.setText(array.definitions[0 + questionNumber].word);
             option2.setText(array.definitions[1 + questionNumber].word);
@@ -151,7 +153,9 @@ public class Tests extends AppCompatActivity {
     }
 
     public int computeScore() {
-        return (int) (5000 * (correctAnswers - wrongAnswers / 2) / 100 - timer);
+        double score = (5000 * (correctAnswers - wrongAnswers / 2) / 100 - timer);
+        if (score > 0) return (int) score;
+        else return 0;
     }
 
     public void selectOptions(int option) {

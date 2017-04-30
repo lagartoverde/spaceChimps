@@ -36,7 +36,6 @@ public class Crowdsourcing extends AppCompatActivity {
                 new Response.Listener<JSONObject>() {
                     public void onResponse(JSONObject response) {
                            Crowdsourcing.feedback.setText("Thanks for your input");
-
                     }
 
 
