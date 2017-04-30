@@ -43,6 +43,10 @@ public class Ranking extends AppCompatActivity {
         }
         TextView ranking=(TextView) findViewById(R.id.rank);
         int rank=getIntent().getExtras().getInt("rank");
-        ranking.setText("You are the number "+rank+" in the global ranking");
+        if(rank==-1){
+            ranking.setText("You are not yet in the ranking");
+        }else {
+            ranking.setText("You are the number " + rank + " in the global ranking");
+        }
     }
 }

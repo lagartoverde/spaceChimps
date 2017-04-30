@@ -86,7 +86,9 @@
                     android:layout_weight="1"
                     android:layout_centerHorizontal="true"
                     android:layout_gravity="center_horizontal"
-                    android:background="@drawable/buttonstate2"/>
+                    android:background="@drawable/buttonstate2"
+                    android:onClick="send"
+                    />
 
 
             </LinearLayout>

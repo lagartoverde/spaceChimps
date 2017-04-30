@@ -3,6 +3,7 @@ package com.spacechimps.finalapp;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -135,7 +136,7 @@ public class Tests extends AppCompatActivity {
             JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, "http://spacechimps.ddns.net/controller.php?operation=6&user=" + user_id + "&points="+score,
                     new Response.Listener<JSONObject>() {
                         public void onResponse(JSONObject response) {
-
+                            Log.v("success","x");
                         }
 
 

@@ -20,7 +20,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Welcome, new user. Choose your desired playing game"
+            android:text="Welcome, new user. Choose your desired playing mode"
             android:textColor="@color/hint"
             android:textSize="30dp" />
     </LinearLayout>
