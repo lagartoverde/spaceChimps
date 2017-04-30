@@ -40,13 +40,12 @@
         <Button
             android:id="@+id/back"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_weight="0.64"
-            android:background="@drawable/buttonbackground"
+            android:background="@drawable/buttonstate32"
             android:textColor="@color/buttonLabel"
             android:layout_marginLeft="100dp"
             android:layout_marginRight="100dp"
-            android:onClick="goBack"
-            android:text="Go Back" />
+            android:onClick="goBack" />
     </LinearLayout>
 </LinearLayout>

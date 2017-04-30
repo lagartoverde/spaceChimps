@@ -23,6 +23,7 @@
             android:layout_marginRight="50dp"
             android:textSize="30dp"
             android:paddingTop="50dp"
+
             />
     </LinearLayout>
 
@@ -71,11 +72,11 @@
                     android:layout_width="match_parent"
                     android:height="100dp"
                     android:textColor="@color/buttonLabel"
-                    android:background="@drawable/buttonbackground"
-                    android:text="next"
                     android:gravity="center"
                     android:elevation="0dp"
-                    android:onClick="next" />
+                    android:onClick="next"
+                    android:background="@drawable/buttonstate31"
+                    />
 
         </LinearLayout>
 
