@@ -82,19 +82,20 @@
                 <Button
                     android:id="@+id/send"
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
+                    android:layout_height="50dp"
                     android:layout_weight="1"
                     android:layout_centerHorizontal="true"
                     android:layout_gravity="center_horizontal"
-                    android:background="@drawable/buttonstate"
+                    android:background="@drawable/buttonstate2"
                     android:elevation="0dp"
                     android:onClick="send" />
-                <TextView
-                    android:id="@+id/feedback"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/redWrong"/>
+
             </LinearLayout>
+            <TextView
+                android:id="@+id/feedback"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/redWrong"/>
 
 
 

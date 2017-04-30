@@ -30,7 +30,7 @@ import java.util.Arrays;
 
 public class MainScreen extends AppCompatActivity{
     RequestQueue requestQueue;
-
+    static TextView error;
     TextView welcome;
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +50,7 @@ public class MainScreen extends AppCompatActivity{
     }
 
     public void compete(View v){
+        MainScreen.error=(TextView) findViewById(R.id.error);
         final int user_id=getIntent().getExtras().getInt("user_id");
         requestQueue= Volley.newRequestQueue(this.getBaseContext());
         JsonObjectRequest request= new JsonObjectRequest(Request.Method.GET,"http://spacechimps.ddns.net/controller.php?operation=3&user="+user_id,
@@ -58,7 +59,7 @@ public class MainScreen extends AppCompatActivity{
                         try {
                             JSONArray jsondefinitions=response.getJSONArray("definitions");
                             if(jsondefinitions.length()<30){
-                                //TODO: Mostrar mensajito
+                                error.setText("You need 30 words to compete or train");
                             }else{
                                 DefinitionArray definitions=new DefinitionArray(jsondefinitions.length());
                                 for(int i=0;i<jsondefinitions.length();i++){
@@ -95,6 +96,7 @@ public class MainScreen extends AppCompatActivity{
     }
 
     public void practice(View v){
+        MainScreen.error=(TextView) findViewById(R.id.error);
         final int user_id=getIntent().getExtras().getInt("user_id");
         requestQueue= Volley.newRequestQueue(this.getBaseContext());
         JsonObjectRequest request= new JsonObjectRequest(Request.Method.GET,"http://spacechimps.ddns.net/controller.php?operation=3&user="+user_id,
@@ -103,7 +105,7 @@ public class MainScreen extends AppCompatActivity{
                         try {
                             JSONArray jsondefinitions=response.getJSONArray("definitions");
                             if(jsondefinitions.length()<30){
-                                //TODO: Mostrar mensajito
+                                error.setText("You need 30 words to compete or train");
                             }else{
                                 DefinitionArray definitions=new DefinitionArray(jsondefinitions.length());
                                 for(int i=0;i<jsondefinitions.length();i++){

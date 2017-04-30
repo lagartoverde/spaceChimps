@@ -38,7 +38,7 @@ public class LearnWords extends AppCompatActivity {
     public void next(View v){
         if(index==4){
             AlertDialog.Builder builder1 = new AlertDialog.Builder(this);
-            builder1.setMessage("Congratulations you have learned 5 new words");
+            builder1.setMessage("Congratulations you have learnt 5 new words");
             builder1.setPositiveButton(
                     "OK",
                     new DialogInterface.OnClickListener() {
