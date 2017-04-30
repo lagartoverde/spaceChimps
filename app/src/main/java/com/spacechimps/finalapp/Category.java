@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.ProgressBar;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -48,6 +49,8 @@ public class Category extends AppCompatActivity {
         request(6);
     }
     public void request(int id){
+        ProgressBar waiting=(ProgressBar)findViewById(R.id.waiting);
+        waiting.setVisibility(View.VISIBLE);
         requestQueue= Volley.newRequestQueue(this.getBaseContext());
         JsonObjectRequest request= new JsonObjectRequest(Request.Method.GET,"http://spacechimps.ddns.net/controller.php?operation=2&user="+user_id+"&category="+id,
                 new Response.Listener<JSONObject>(){
@@ -67,6 +70,8 @@ public class Category extends AppCompatActivity {
                             intent.putExtra("pack",pack);
                             user_id=getIntent().getExtras().getInt("user_id");
                             intent.putExtra("user_id",user_id);
+                            ProgressBar waiting=(ProgressBar)findViewById(R.id.waiting);
+                            waiting.setVisibility(View.INVISIBLE);
                             startActivity(intent);
                         } catch (JSONException e) {
                             e.printStackTrace();
